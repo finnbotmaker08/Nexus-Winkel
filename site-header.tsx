@@ -23,7 +23,7 @@ export async function SiteHeader({ active }: { active?: string }) {
     settings.discord_server_url &&
     isValidDiscordInvite(settings.discord_server_url)
       ? settings.discord_server_url
-      : null;
+      : "https://discord.gg/J7f92Cj9EH";
 
   return (
     <>
@@ -31,7 +31,7 @@ export async function SiteHeader({ active }: { active?: string }) {
         <div className="store-glow-drift pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(47,112,240,0.18),transparent_65%)]" />
         <div className="mx-auto flex min-h-9 max-w-7xl items-center justify-center gap-2 px-4 text-center text-[11px] font-medium tracking-wide text-blue-50/70">
           <Sparkles className="h-3.5 w-3.5 text-blue-200" />
-          <span>Digital upgrades, without the extra noise.</span>
+          <span>Digitale upgrades, snel en betrouwbaar geregeld.</span>
           {communityInvite ? (
             <a
               href={communityInvite}
@@ -50,13 +50,13 @@ export async function SiteHeader({ active }: { active?: string }) {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
           <Link
             href="/"
-            aria-label="VENTEX home"
+            aria-label="Nexus Suppliers home"
             className="group flex min-w-0 items-center gap-3"
           >
             <span className="relative block h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-blue-200/20 bg-[#050812] shadow-[0_0_28px_rgba(37,99,235,0.24)] ring-1 ring-white/[0.04]">
               <Image
-                src="/ventex-logo.png"
-                alt=""
+                src="/logo.png"
+                alt="Nexus Suppliers Logo"
                 fill
                 priority
                 sizes="40px"
@@ -64,11 +64,11 @@ export async function SiteHeader({ active }: { active?: string }) {
               />
             </span>
             <span className="min-w-0">
-              <span className="block text-sm font-black tracking-[0.19em] text-white">
-                VENTEX
+              <span className="block text-sm font-black tracking-[0.12em] text-white">
+                Nexus Suppliers
               </span>
               <span className="mt-0.5 block text-[9px] font-semibold uppercase tracking-[0.2em] text-blue-200/50">
-                Nitro &amp; boosts
+                Digital Store
               </span>
             </span>
           </Link>
@@ -159,18 +159,15 @@ export async function SiteHeader({ active }: { active?: string }) {
             <ShieldCheck className="h-3.5 w-3.5" />
             My orders
           </Link>
-          {settings.discord_support_url &&
-          isValidDiscordInvite(settings.discord_support_url) ? (
-            <a
-              href={settings.discord_support_url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-2 text-xs text-white/50 transition hover:text-white"
-            >
-              <MessageCircle className="h-3.5 w-3.5" />
-              Discord
-            </a>
-          ) : null}
+          <a
+            href="https://discord.gg/J7f92Cj9EH"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-2 text-xs text-white/50 transition hover:text-white"
+          >
+            <MessageCircle className="h-3.5 w-3.5" />
+            Discord
+          </a>
         </nav>
       </header>
     </>
