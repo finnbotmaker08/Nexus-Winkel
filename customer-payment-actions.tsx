@@ -70,16 +70,24 @@ export function CustomerPaymentActions({
     status === "awaiting_payment"
   ) {
     return (
-      <div className="mt-4">
+      <div className="mt-4 flex flex-col gap-3">
+        <a
+          href="https://tikkie.me/pay/n9s4hs6kk3ti3i6322se"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2.5 text-xs font-bold text-black transition hover:bg-white/90"
+        >
+          Betaal via Tikkie (Open link)
+        </a>
         <button
           type="button"
           disabled={pending}
           onClick={() =>
             void post("/api/payments/tikkie-submitted", { orderId })
           }
-          className="rounded-xl bg-white px-4 py-2.5 text-xs font-bold text-black disabled:opacity-50"
+          className="rounded-xl border border-white/20 bg-black/40 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-white/10 disabled:opacity-50"
         >
-          {pending ? "Submitting..." : "I have paid — request review"}
+          {pending ? "Bezig..." : "Ik heb betaald — geef seintje aan winkel"}
         </button>
         {error ? <p role="alert" className="mt-2 text-xs text-red-200/80">{error}</p> : null}
         {notice ? <p role="status" className="mt-2 text-xs text-emerald-100/80">{notice}</p> : null}
